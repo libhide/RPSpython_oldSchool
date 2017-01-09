@@ -4,8 +4,10 @@ myDictionary={"1":"Rock","2":"Paper","3":"Scissor","q":"q"}
 
 def displayAndGet():
     print("1.Rock\t2.Paper\t3.Scissor")
-    choice=str(input("Your Choice(Enter the number):"))
-    return choice
+    ch=str(input("Your Choice(Enter the number):"))
+    while(ch!="1" and ch!="2" and ch!="3" and ch!="q"):
+        ch=str(input("Wrong Choice, give proper input:"))
+    return ch
 
 def decideWinner(Sys,You):
     if(Sys.choice==You.choice):

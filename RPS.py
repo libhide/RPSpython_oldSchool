@@ -36,10 +36,10 @@ class player:
 def main():
     YouP=player(operator="human")
     SysP=player(operator="computer")
-    print("A Simple Rock-Paper-Scissor game\nYOU vs COMPUTER\n(Type q to quit)")
+    print("A Simple Rock-Paper-Scissor game\nYOU vs COMPUTER\n(Type q or Q to quit)")
     while(True):
         YouP.bout()
-        if(YouP.choice=="q"):
+        if(YouP.choice=="q" or YouP.choice=="Q"):
             break
         SysP.bout()
         print("The computer chose "+SysP.choice)

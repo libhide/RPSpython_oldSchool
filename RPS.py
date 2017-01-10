@@ -1,6 +1,23 @@
 from random import randint
 
 
+class Player:
+    ''' Applies for both human and computer'''
+    def __init__(self, operator):
+        self.operator = operator
+        self.winCounter = 0
+        self.choice = "playing"
+
+    def bout(self):
+        if self.operator == "computer":
+            self.choice = myDictionary[str(randint(1, 3))]
+        else:
+            self.choice = myDictionary[displayAndGet()]
+
+    def winCount(self):
+        self.winCounter += 1
+
+
 myDictionary = {
     "1": "Rock",
     "2": "Paper",
@@ -26,23 +43,6 @@ def decideWinner(Sys, You):
         return "You" if You.choice == "Scissor" else "Sys"
     elif Sys.choice == "Scissor":
         return "You" if You.choice == "Rock" else "Sys"
-
-
-class Player:
-    ''' Applies for both human and computer'''
-    def __init__(self, operator):
-        self.operator = operator
-        self.winCounter = 0
-        self.choice = "playing"
-
-    def bout(self):
-        if self.operator == "computer":
-            self.choice = myDictionary[str(randint(1, 3))]
-        else:
-            self.choice = myDictionary[displayAndGet()]
-
-    def winCount(self):
-        self.winCounter += 1
 
 
 def main():

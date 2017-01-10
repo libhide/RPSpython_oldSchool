@@ -10,10 +10,10 @@ myDictionary = {
 
 
 def displayAndGet():
-    print("1.Rock\t2.Paper\t3.Scissor")
-    ch = str(input("Your Choice(Enter the number): "))
+    print("1. Rock\n2. Paper\n3. Scissors\nq. Quit\n")
+    ch = str(input("Your choice (enter the number): "))
     while(ch!="1" and ch!="2" and ch!="3" and ch!="q"):
-        ch = str(input("Wrong Choice, give proper input: "))
+        ch = str(input("Wrong choice, give proper input: "))
     return ch
 
 
@@ -48,7 +48,9 @@ class Player:
 def main():
     YouP = Player(operator="human")
     SysP = Player(operator="computer")
-    print("A Simple Rock-Paper-Scissor game\nYOU vs COMPUTER\n(Type q or Q to quit)")
+    print("A Simple Rock-Paper-Scissor game")
+    print("YOU vs COMPUTER")
+    print("================================")
     while True:
         YouP.bout()
         if YouP.choice == "q" or YouP.choice == "Q":
